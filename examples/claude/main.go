@@ -13,12 +13,12 @@ import (
 	"github.com/joho/godotenv"
 
 	// Toolkit framework
-	"ai-toolkit/toolkit"
+	"github.com/hamzaessahbaoui/ai-toolkit/toolkit"
 
 	// Implementation packages (core logic + types)
-	"ai-toolkit/pkg/tools/operations"
-	"ai-toolkit/pkg/tools/response"
-	"ai-toolkit/pkg/tools/search"
+	"github.com/hamzaessahbaoui/ai-toolkit/pkg/tools/operations"
+	"github.com/hamzaessahbaoui/ai-toolkit/pkg/tools/response"
+	"github.com/hamzaessahbaoui/ai-toolkit/pkg/tools/search"
 )
 
 // Define the Claude Client struct with Client, Params, and Toolkit

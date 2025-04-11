@@ -9,7 +9,7 @@ import (
 
 	// Import the package we are testing
 	// We use the exported functions like toolkit.NewChild
-	"ai-toolkit/toolkit"
+	"github.com/hamzaessahbaoui/ai-toolkit/toolkit"
 
 	"github.com/stretchr/testify/assert"
 )

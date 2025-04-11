@@ -1,4 +1,4 @@
-module ai-toolkit
+module github.com/hamzaessahbaoui/ai-toolkit
 
 go 1.22.1
 

@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"ai-toolkit/toolkit"
+	"github.com/hamzaessahbaoui/ai-toolkit/toolkit"
 
 	"github.com/invopop/jsonschema"
 	"github.com/stretchr/testify/assert"
