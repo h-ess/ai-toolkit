@@ -83,8 +83,27 @@ Individual tool implementations that perform specific operations.
 
 ## Installation
 
+### Using Go Modules (Recommended)
+
 ```bash
-go get github.com/hamzaessahbaoui/ai-toolkit
+# Install the latest stable version
+go get github.com/hamzaessahbaoui/ai-toolkit@v0.1.0
+```
+
+For production use, we strongly recommend pinning to a specific version tag to ensure stability.
+
+### Version Compatibility
+
+| Version | Go Version | Status |
+|---------|------------|--------|
+| v0.1.0  | Go 1.22+   | Stable |
+
+### Troubleshooting
+
+If you encounter module resolution issues, try clearing your module cache:
+
+```bash
+go get github.com/hamzaessahbaoui/ai-toolkit@v0.1.0
 ```
 
 ## Quick Start
