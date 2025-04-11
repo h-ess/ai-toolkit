@@ -87,7 +87,7 @@ Individual tool implementations that perform specific operations.
 
 ```bash
 # Install the latest stable version
-go get github.com/hamzaessahbaoui/ai-toolkit@v0.1.0
+go get github.com/h-ess/ai-toolkit@v0.1.0
 ```
 
 For production use, we strongly recommend pinning to a specific version tag to ensure stability.
@@ -103,7 +103,7 @@ For production use, we strongly recommend pinning to a specific version tag to e
 If you encounter module resolution issues, try clearing your module cache:
 
 ```bash
-go get github.com/hamzaessahbaoui/ai-toolkit@v0.1.0
+go get github.com/h-ess/ai-toolkit@v0.1.0
 ```
 
 ## Quick Start
@@ -118,7 +118,7 @@ import (
     "fmt"
     "os"
     
-    "github.com/hamzaessahbaoui/ai-toolkit/toolkit"
+    "github.com/h-ess/ai-toolkit/toolkit"
 )
 
 // Define argument and response types
@@ -289,7 +289,7 @@ import (
     "github.com/anthropics/anthropic-sdk-go"
     "github.com/anthropics/anthropic-sdk-go/option"
     
-    "github.com/hamzaessahbaoui/ai-toolkit/toolkit"
+    "github.com/h-ess/ai-toolkit/toolkit"
 )
 
 // Create your toolkit with various tools...
