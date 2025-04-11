@@ -84,7 +84,7 @@ Individual tool implementations that perform specific operations.
 ## Installation
 
 ```bash
-go get github.com/your-username/ai-toolkit
+go get github.com/hamzaessahbaoui/ai-toolkit
 ```
 
 ## Quick Start
