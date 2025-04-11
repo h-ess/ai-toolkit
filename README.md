@@ -186,6 +186,95 @@ func handleToolRequest(toolkitJSON []byte) {
 }
 ```
 
+### 3. JSON Request Format
+
+The `HandleToolKit` method expects a specific JSON structure that maps to the internal `ToolKit` type. Below is an example of a valid request format:
+
+```json
+{
+    "name": "test_toolkit",
+    "parents": [
+        {
+            "name": "test_parent",
+            "childs": [
+                {
+                    "name": "test_child",
+                    "args": {
+                        "arg1": "value1",
+                        "arg2": 42
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
+
+#### Structure Explanation
+
+| JSON Field | Go Struct Field | Description |
+|------------|----------------|-------------|
+| `name` | `ToolKit.Name` | The name of the toolkit (for identification) |
+| `parents` | `ToolKit.ToolKitParents` | Array of parent categories to invoke |
+| `parents[].name` | `ToolKitParent.Name` | Name of the parent category (must match a registered parent) |
+| `parents[].childs` | `ToolKitParent.ToolKitChilds` | Array of child tools to execute within this parent |
+| `parents[].childs[].name` | `ToolKitChild.Name` | Name of the child tool to execute (must match a registered child) |
+| `parents[].childs[].args` | `ToolKitChild.Args` | Arguments specific to this child tool (must match the tool's input schema) |
+
+#### Executing Multiple Tools
+
+One of the key advantages of AI-Toolkit is the ability to execute multiple tools in a single request:
+
+```json
+{
+    "name": "media_toolkit",
+    "parents": [
+        {
+            "name": "file_operations",
+            "childs": [
+                {
+                    "name": "read_file",
+                    "args": {
+                        "path": "input.txt"
+                    }
+                },
+                {
+                    "name": "write_file",
+                    "args": {
+                        "path": "output.txt",
+                        "content": "Generated content"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "search",
+            "childs": [
+                {
+                    "name": "web_search",
+                    "args": {
+                        "query": "AI toolkit best practices"
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
+
+#### Troubleshooting Request Errors
+
+Common issues when working with toolkit requests:
+
+1. **Invalid JSON format**: Ensure your JSON is well-formed and follows the structure above
+2. **Missing required fields**: The `name` field is required at all levels
+3. **Parent not found**: Verify that the parent name matches exactly what was registered
+4. **Child not found**: Verify that the child name matches exactly what was registered
+5. **Invalid arguments**: Make sure the arguments match the schema defined for the tool
+6. **Schema validation**: If you're getting errors about required fields, check the jsonschema tags in your argument type definitions
+
+The toolkit provides detailed error messages to help identify the source of request parsing problems.
+
 ## Real-World Example with Claude
 
 For a complete working example, see the [Claude integration example](examples/claude/main.go) in this repository.
